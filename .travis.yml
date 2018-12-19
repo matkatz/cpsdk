@@ -13,11 +13,11 @@ matrix:
       sudo: false
       script:
         - choco install -y vcbuildtools --version 2015.4 --force 
-        - cmake -G "Visual Studio 14 2015 Win64"
-        - cmake --build .
+        - cmake . -G "Visual Studio 14 2015 Win64"
+        - cmake --build . --config Debug
       deploy:
         provider: releases
-        file: "build/Debug/realsense2.dll"
+        file: "bin/Debug/basic_examole.exe"
         skip_cleanup: true
         draft: true
         on:

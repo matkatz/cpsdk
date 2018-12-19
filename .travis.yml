@@ -5,6 +5,14 @@ matrix:
     - os: linux
       sudo: required
       dist: trusty
+      deploy:
+        provider: releases
+        api_key: "secure api key"
+        file: "bin/basic_examole"
+        skip_cleanup: true
+        draft: true
+        on:
+          all_branches: true
     - os: osx
       sudo: required
       dist: trusty
@@ -17,6 +25,7 @@ matrix:
         - cmake --build . --config Debug
       deploy:
         provider: releases
+        api_key: "secure api key"
         file: "bin/Debug/basic_examole.exe"
         skip_cleanup: true
         draft: true

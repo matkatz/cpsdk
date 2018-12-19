@@ -7,7 +7,7 @@ matrix:
       dist: trusty
       deploy:
         provider: releases
-        api_key: "secure api key"
+        api_key: "GITHUB OAUTH TOKEN"
         file: "bin/basic_examole"
         skip_cleanup: true
         draft: true
@@ -25,7 +25,7 @@ matrix:
         - cmake --build . --config Debug
       deploy:
         provider: releases
-        api_key: "secure api key"
+        api_key: "GITHUB OAUTH TOKEN"
         file: "bin/Debug/basic_examole.exe"
         skip_cleanup: true
         draft: true

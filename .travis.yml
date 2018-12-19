@@ -1,0 +1,9 @@
+matrix:
+  include:
+    - os: windows
+      language: cpp
+      sudo: false
+
+scripr:
+  - cmake .
+  - cmake --build . -- -j4

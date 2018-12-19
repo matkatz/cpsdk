@@ -6,4 +6,4 @@ matrix:
 
 scripr:
   - cmake .
-  - cmake --build . -- -j2
+  - cmake --build . -- -j4

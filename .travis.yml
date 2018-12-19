@@ -1,0 +1,8 @@
+language: cpp
+os:
+  - linux
+  - windows
+  
+script:
+  - cmake .
+  - cmake --build .

@@ -1,3 +1,5 @@
+language: cpp
+
 matrix:
   include:
     - os: linux
@@ -12,7 +14,14 @@ matrix:
       script:
         - choco install -y vcbuildtools --version 2015.4 --force 
         - cmake -G "Visual Studio 14 2015 Win64"
-language: cpp
+        - cmake --build .
+      deploy:
+        provider: releases
+        file: "build/Debug/realsense2.dll"
+        skip_cleanup: true
+        draft: true
+        on:
+          all_branches: true
 
 script:
   - cmake .

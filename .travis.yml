@@ -11,6 +11,7 @@ matrix:
       sudo: false
       script:
         - choco install -y vcbuildtools --version 2015.4 --force 
+        - cmake -G "Visual Studio 14 2015 Win64"
 language: cpp
 
 script:

@@ -2,36 +2,13 @@ language: cpp
 
 matrix:
   include:
-    - os: linux
-      sudo: required
-      dist: trusty
-      deploy:
-        provider: releases
-        api_key: $GITHUB_OAUTH_TOKEN
-        file: "bin/basic_examole"
-        skip_cleanup: true
-        draft: true
-        on:
-          all_branches: true
-    - os: osx
-      sudo: required
-      dist: trusty
-      osx_image: xcode7
     - os: windows
-      sudo: false
       script:
-        - choco install -y vcbuildtools --version 2015.4 --force 
-        - cmake . -G "Visual Studio 14 2015 Win64"
+        - mkdir build && cd build
+        - cmake .. -G "Visual Studio 15 2017 Win64"
         - cmake --build . --config Debug
-      deploy:
-        provider: releases
-        api_key: $GITHUB_OAUTH_TOKEN
-        file: "bin/Debug/basic_examole.exe"
-        skip_cleanup: true
-        draft: true
-        on:
-          all_branches: true
+        - ls
+        - cd bin/Debug
+        - ./basic_example.exe
 
-script:
-  - cmake .
-  - cmake --build .
+install: true

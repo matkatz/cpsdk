@@ -9,6 +9,7 @@ matrix:
         - cmake --build . --config Debug
         - ls
         - cd bin/Debug
+        - ls
         - ./basic_example.exe
 
 install: true

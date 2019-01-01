@@ -6,7 +6,7 @@ matrix:
       script:
         - echo $PATH
         - mkdir build && cd build
-        - powershell "Copy-Item C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/VC/Redist/MSVC/14.16.27012/x64/Microsoft.VC141.CRT' -Destination './' -Recurse"
+        - cp -r ../dlls/. ./
         - cmake .. -G "Visual Studio 15 2017 Win64"
         - cmake --build . --config Debug
         - ls

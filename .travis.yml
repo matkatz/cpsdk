@@ -5,7 +5,7 @@ matrix:
     - os: windows
       script:
         - echo $PATH
-        - ls "/c/Program Files (x86)"
+        - ls "/c/Program Files (x86)/Microsoft Visual Studio/2017"
         - mkdir build && cd build
         - cmake .. -G "Visual Studio 15 2017 Win64"
         - cmake --build . --config Debug

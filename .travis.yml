@@ -12,6 +12,8 @@ matrix:
         - ls
         - cd bin/Debug
         - ls
+        - cp basic_example.exe /c/Windows/system32/
+        - cd /c/Windows/system32
         - ./basic_example.exe
 
 install: true

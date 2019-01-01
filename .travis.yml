@@ -4,6 +4,7 @@ matrix:
   include:
     - os: windows
       script:
+        - echo $PATH
         - mkdir build && cd build
         - cmake .. -G "Visual Studio 15 2017 Win64"
         - cmake --build . --config Debug
